@@ -31,7 +31,7 @@ module.exports = {
 
       const match = await bcrypt.compare(password, user.password);
       if (!match) {
-        errors.general = "Passwords don't match";
+        errors.general = "Wrong credentials";
         throw new UserInputError('Wrong credentials', { errors });
       }
 
@@ -54,9 +54,9 @@ module.exports = {
       // Make sure user doesn't already exist
       const user = await User.findOne({ username });
       if (user) {
-        throw new UserInputError('Username is already taken.', {
+        throw new UserInputError('Username is already taken', {
           errors: {
-            username: 'This username is already taken.'
+            username: 'This username is already taken'
           }
         });
       }

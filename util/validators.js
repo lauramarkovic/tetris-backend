@@ -6,20 +6,20 @@ module.exports.validateRegisterInput = (
 ) => {
   const errors = {};
   if (username.trim() === '') {
-    errors.username = 'Username must not be empty.'
+    errors.username = 'Username must not be empty'
   }
   if (email.trim() === '') {
-    errors.email = 'Email must not be empty.'
+    errors.email = 'Email must not be empty'
   } else {
     const regEx = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
     if (!email.match(regEx)) {
-      errors.email = 'Please enter a valid email address.'
+      errors.email = 'Please enter a valid email address'
     }
   }
   if (password === '') {
     errors.password = 'Password must not be empty'
   } else if (password !== confirmPassword) {
-    errors.confirmPassword = 'Please enter matching passwords.'
+    errors.confirmPassword = 'Please enter matching passwords'
   }
 
   return {
@@ -31,10 +31,10 @@ module.exports.validateRegisterInput = (
 module.exports.validateLoginInput = (username, password) => {
   const errors = {};
   if (username.trim() === '') {
-    errors.username = 'Username must not be empty.'
+    errors.username = 'Username must not be empty'
   }
   if (password === '') {
-    errors.password = 'Password must not be empty.'
+    errors.password = 'Password must not be empty'
   }
 
   return {

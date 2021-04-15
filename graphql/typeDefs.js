@@ -23,9 +23,11 @@ module.exports = gql`
   }
   type Query{
     getRecords: [Record]
+    getUserRecords(username: String!): [Record]
   }
   type Mutation{
     register(registerInput: RegisterInput): User!
     login(username: String!, password: String!): User!
+    createRecord(score: Int!, level: Int!): Record!
   }
 `;
