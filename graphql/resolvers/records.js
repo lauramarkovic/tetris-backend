@@ -22,7 +22,6 @@ module.exports = {
   },
   Mutation: {
     async createRecord(_, { score, level }, context) {
-      console.log("createRecord");
       const user = checkAuth(context);
 
       const newRecord = new Record({
